@@ -92,7 +92,7 @@ void preview(struct robots robots_list[], int registers){
 
 void get_date(){
 
-     time_t mytime;
+    time_t mytime;
     mytime = time(NULL);
     struct tm tm = *localtime(&mytime);
     printf("\n Date: %d/%d/%d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
@@ -125,7 +125,7 @@ while(howMany < 3){
 
         printf("\n* Robots registered: %d *\n\n", registered);
 
-        printf("(1) - Register new robot\n(2) - List robots\n(3) -Exit\n");
+        printf("(1) - Register new robot\n(2) - List robots\n(3) - Exit\n");
 
         printf("\n Option: ");
         scanf("%d", &op);
