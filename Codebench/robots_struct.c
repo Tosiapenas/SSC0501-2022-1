@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-/* this exercise was made by me when I helped a friend with an exercise in a Edx course (see robots.c, only after see that program, ONLY THEN see him), I have programmed something like that in that last semester at 
-my university, but I was starting in C (Now I am better that before, but I am very bad yet :P).
-*/
-
 typedef struct robots{
 
     double weight, height, enginePower, resistance, power, series_number, result;
@@ -26,7 +21,7 @@ void PressEnter(){
 
 void register_robot(struct robots p[100], int n){
 
-    printf("Robot name:\n");
+    printf("\nRobot name:\n");
     setbuf(stdin, NULL);
     fgets(p[n].name, 20, stdin);
 
@@ -95,20 +90,25 @@ void preview(struct robots robots_list[], int registers){
     PressEnter();
 }
 
+void get_date(){
+
+     time_t mytime;
+    mytime = time(NULL);
+    struct tm tm = *localtime(&mytime);
+    printf("\n Date: %d/%d/%d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+
+}
+
 
 int main(){
 
 rb rb[100];
 int howMany, op, registered = 0;
 
- time_t mytime;
- mytime = time(NULL);
-struct tm tm = *localtime(&mytime);
-printf("\nDate: %d/%d/%d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
-printf("How many robots do you want to registering: \n");
+printf("How many robots do you want to register: \n");
 scanf("%d", &howMany);
 
-while(howMany <= 3){
+while(howMany < 3){
     printf("3 robots are the minimum for registering, type again: ");
     scanf("%d", &howMany);
 
@@ -121,11 +121,13 @@ while(howMany <= 3){
 
   while((howMany >= registered)){
 
+        get_date();
 
         printf("\n* Robots registered: %d *\n\n", registered);
 
         printf("(1) - Register new robot\n(2) - List robots\n(3) -Exit\n");
 
+        printf("\n Option: ");
         scanf("%d", &op);
 
 switch(op){
