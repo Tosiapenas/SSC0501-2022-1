@@ -6,10 +6,14 @@ int main()
   int *numbers;
   int i = 0, sum = 0;
   FILE *file;
+  char arq_option[10];
 
-  numbers = (int *)malloc(sizeof(int));
+  //file name
+  scanf("%s", arq_option);
 
-  file = fopen("ex1.txt", "r");
+  numbers = (int *)malloc(1300 * sizeof(int));
+
+  file = fopen(arq_option, "r");
 
   if(file == NULL){
     printf("Erro na leitura do arquivo");
@@ -21,7 +25,6 @@ int main()
       sum += numbers[i];
       i++;
     } 
-    numbers[i] = '\0';
 
   printf("%d", sum);
 
