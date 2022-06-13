@@ -1,5 +1,20 @@
 #include <stdio.h>
 
+void insertionSort(int vet[], int n);
+void printArray(int vet[], int n);
+
+int main(){
+
+  int n; // array size
+  scanf("%d", &n);
+  int vet[n];
+
+	insertionSort(vet, n);
+	printArray(vet, n);
+
+	return 0;
+}
+
 void insertionSort(int vet[], int n)
 {
 	int last, a, b;
@@ -20,7 +35,7 @@ void insertionSort(int vet[], int n)
 		while (j >= 0 && vet[j] > last)
 		{
 			vet[j + 1] = vet[j];
-			j = j - 1;
+			j--;
 		}
 		vet[j + 1] = last;
 	}
@@ -34,16 +49,4 @@ void printArray(int vet[], int n)
 		printf("%d ", vet[i]);
   }
 	printf("\n");
-}
-
-int main(){
-
-	int n; // array size
-  scanf("%d", &n);
-  int vet[n];
-
-	insertionSort(vet, n);
-	printArray(vet, n);
-
-	return 0;
 }
