@@ -19,16 +19,15 @@ void insertionSort(int vet[], int n)
 {
 	int last, a, b;
 
-	for (int i = 0; i < n; i++)
-	{
+	for (int i = 0; i < n; i++){
 
-    scanf("%d %d", &a, &b);
+	scanf("%d %d", &a, &b);
 
 	if(a > b){ //conditional
-		vet[i] = a;
+	     vet[i] = a;
 	}else
 	     vet[i] = b;
-	
+
 	last = vet[i];
 	int j = i - 1;
 	while (j >= 0 && vet[j] > last){
@@ -36,7 +35,7 @@ void insertionSort(int vet[], int n)
 	      j--;
 	}
 	vet[j + 1] = last;
-		
+
 	}
 }
 
